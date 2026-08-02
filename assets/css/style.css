@@ -1,0 +1,38 @@
+body{
+
+font-family: Arial, sans-serif;
+background:#f5f7fb;
+
+}
+
+
+.hero{
+
+padding:120px 20px;
+
+background:white;
+
+}
+
+
+.hero h1{
+
+font-size:45px;
+font-weight:700;
+
+}
+
+
+.card{
+
+border:none;
+border-radius:15px;
+
+}
+
+
+.btn{
+
+border-radius:25px;
+
+}
