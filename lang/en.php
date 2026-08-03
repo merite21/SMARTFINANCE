@@ -122,6 +122,7 @@ return [
     "admin_mdp_trop_court" => "The password must contain at least 6 characters.",
 
     // Testimonials (content)
+<<<<<<< HEAD
     'temoignage1_texte' => 'Thanks to SmartFinance, I received my financing faster than expected. The service was professional and transparent.',
 'temoignage1_role' => 'Engineer • Berlin, Germany',
 
@@ -145,6 +146,16 @@ return [
 
 'temoignage8_texte' => 'Reliable advice and excellent customer service. Highly recommended.',
 'temoignage8_role' => 'Accountant • Frankfurt, Germany',
+=======
+    "temoignage1_texte" => "I got a response to my request in less than 48 hours. Simple, fast, and the online tracking is very handy.",
+    "temoignage1_role" => "Shop owner, Cotonou",
+    "temoignage2_texte" => "The simulator let me know exactly what to expect before even submitting my request. Very reassuring.",
+    "temoignage2_role" => "Entrepreneur, Porto-Novo",
+    "temoignage3_texte" => "An attentive team and serious support from start to finish on my project. I recommend it.",
+    "temoignage3_role" => "Teacher, Abomey-Calavi",
+    "temoignages_note" => "* Sample testimonials, to be replaced with real customer reviews as they become available.",
+
+>>>>>>> 785691553ce273d604f66e7abf5d092c6e1f60b9
     // Generic unit
     "unite_mois" => "months",
 

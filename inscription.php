@@ -73,12 +73,21 @@ if(isset($_POST['inscription'])){
         $_SESSION['user'] = $nouvelUtilisateur->fetch();
 
         notifierProprietaire(
+<<<<<<< HEAD
             "Nouvelle inscription sur SmartFinance",
             "<h3>Nouveau compte créé</h3>
             <p><strong>Nom :</strong> " . e($nom) . " " . e($prenom) . "</p>
             <p><strong>Email :</strong> " . e($email) . "</p>
             <p><strong>Téléphone :</strong> " . e($telephone) . "</p>"
         );
+=======
+    "Nouvelle inscription sur SmartFinance",
+    "<h3>Nouveau compte créé</h3>
+    <p><strong>Nom :</strong> " . $nom . " " . $prenom . "</p>
+    <p><strong>Email :</strong> " . $email . "</p>
+    <p><strong>Téléphone :</strong> " . $telephone . "</p>"
+); 
+>>>>>>> 785691553ce273d604f66e7abf5d092c6e1f60b9
 
         redirect("dashboard.php");
 

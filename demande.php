@@ -111,6 +111,7 @@ if(isset($_POST['envoyer'])){
         $message = t('demande_succes');
         $succes = true;
 
+<<<<<<< HEAD
         notifierProprietaire(
             "Nouvelle demande de prêt sur SmartFinance",
             "<h3>Nouvelle demande de prêt</h3>
@@ -121,6 +122,17 @@ if(isset($_POST['envoyer'])){
             <p><strong>Objet :</strong> " . e($objet) . "</p>"
         );
 
+=======
+    notifierProprietaire(
+    "Nouvelle demande de prêt sur SmartFinance",
+    "<h3>Nouvelle demande de prêt</h3>
+    <p><strong>Client :</strong> " . $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] . "</p>
+    <p><strong>Email :</strong> " . $_SESSION['user']['email'] . "</p>
+    <p><strong>Montant :</strong> " . $montant . " FCFA</p>
+    <p><strong>Durée :</strong> " . $duree . " mois</p>
+    <p><strong>Objet :</strong> " . $objet . "</p>"
+);
+>>>>>>> 785691553ce273d604f66e7abf5d092c6e1f60b9
     }
 
 }

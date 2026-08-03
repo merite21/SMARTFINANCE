@@ -122,6 +122,7 @@ return [
     "admin_mdp_trop_court" => "Le mot de passe doit contenir au moins 6 caractères.",
 
     // Témoignages (contenu)
+<<<<<<< HEAD
    'temoignage1_texte' => "Grâce à SmartFinance, j'ai obtenu mon financement rapidement. Le service était professionnel et transparent.",
 'temoignage1_role' => 'Ingénieur • Berlin, Allemagne',
 
@@ -145,6 +146,15 @@ return [
 
 'temoignage8_texte' => "Des conseils fiables et un personnel compétent. Je recommande cette société.",
 'temoignage8_role' => 'Comptable • Francfort, Allemagne',
+=======
+    "temoignage1_texte" => "J'ai obtenu la réponse à ma demande en moins de 48h. Simple, rapide, et le suivi en ligne est très pratique.",
+    "temoignage1_role" => "Commerçante, Cotonou",
+    "temoignage2_texte" => "Le simulateur m'a permis de savoir exactement à quoi m'attendre avant même de faire ma demande. Très rassurant.",
+    "temoignage2_role" => "Entrepreneur, Porto-Novo",
+    "temoignage3_texte" => "Une équipe à l'écoute et un accompagnement sérieux du début à la fin de mon projet. Je recommande.",
+    "temoignage3_role" => "Enseignante, Abomey-Calavi",
+    "temoignages_note" => "* Témoignages d'exemple à remplacer par de vrais avis clients dès que disponibles.",
+>>>>>>> 785691553ce273d604f66e7abf5d092c6e1f60b9
 
     // Unité générique
     "unite_mois" => "mois",

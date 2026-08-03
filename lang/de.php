@@ -122,6 +122,7 @@ return [
     "admin_mdp_trop_court" => "Das Passwort muss mindestens 6 Zeichen lang sein.",
 
     // Kundenstimmen (Inhalt)
+<<<<<<< HEAD
     'temoignage1_texte' => 'Dank SmartFinance erhielt ich meine Finanzierung schneller als erwartet. Der Service war professionell und transparent.',
 'temoignage1_role' => 'Ingenieur • Berlin, Deutschland',
 
@@ -145,6 +146,16 @@ return [
 
 'temoignage8_texte' => 'Kompetente Beratung und zuverlässiger Service. Empfehlenswert.',
 'temoignage8_role' => 'Buchhalterin • Frankfurt am Main, Deutschland',
+=======
+    "temoignage1_texte" => "Ich habe innerhalb von 48 Stunden eine Antwort auf meinen Antrag erhalten. Einfach, schnell, und die Online-Verfolgung ist sehr praktisch.",
+    "temoignage1_role" => "Geschäftsinhaberin, Cotonou",
+    "temoignage2_texte" => "Mit dem Simulator wusste ich genau, was mich erwartet, noch bevor ich meinen Antrag gestellt habe. Sehr beruhigend.",
+    "temoignage2_role" => "Unternehmer, Porto-Novo",
+    "temoignage3_texte" => "Ein aufmerksames Team und eine ernsthafte Begleitung von Anfang bis Ende meines Projekts. Ich empfehle es.",
+    "temoignage3_role" => "Lehrerin, Abomey-Calavi",
+    "temoignages_note" => "* Beispielhafte Kundenstimmen, die durch echte Kundenbewertungen ersetzt werden, sobald diese verfügbar sind.",
+
+>>>>>>> 785691553ce273d604f66e7abf5d092c6e1f60b9
     // Allgemeine Einheit
     "unite_mois" => "Monate",
 
