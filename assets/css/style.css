@@ -1,0 +1,299 @@
+/* ==========================================================
+   SMARTFINANCE — feuille de style
+   Palette : bleu nuit (confiance) + vert menthe (croissance)
+   ========================================================== */
+
+:root{
+    --sf-primary: #1B3A63;
+    --sf-primary-light: #2E5590;
+    --sf-accent: #22B378;
+    --sf-accent-dark: #189863;
+    --sf-bg: #F4F7FB;
+    --sf-text: #1B2430;
+    --sf-muted: #667085;
+    --sf-danger: #E6484B;
+    --sf-radius: 16px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    background: var(--sf-bg);
+    color: var(--sf-text);
+}
+
+h1, h2, h3, h4, h5{
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar{
+    background: var(--sf-primary) !important;
+    padding: 16px 0;
+}
+
+.navbar-brand{
+    font-size: 1.3rem;
+    letter-spacing: -0.01em;
+}
+
+.navbar .nav-link{
+    color: rgba(255,255,255,.85) !important;
+    font-weight: 500;
+    transition: color .15s ease;
+}
+
+.navbar .nav-link:hover{
+    color: #fff !important;
+}
+
+.navbar .btn-light{
+    font-weight: 600;
+    color: var(--sf-primary);
+}
+
+.navbar .btn-danger{
+    background: var(--sf-danger);
+    border: none;
+    font-weight: 600;
+}
+
+/* ---------- Boutons ---------- */
+
+.btn{
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 10px 22px;
+}
+
+.btn-primary{
+    background: var(--sf-primary);
+    border-color: var(--sf-primary);
+}
+
+.btn-primary:hover{
+    background: var(--sf-primary-light);
+    border-color: var(--sf-primary-light);
+}
+
+.btn-smart{
+    background: var(--sf-accent);
+    border: none;
+    color: #fff;
+}
+
+.btn-smart:hover{
+    background: var(--sf-accent-dark);
+    color: #fff;
+}
+
+/* ---------- Hero (accueil) ---------- */
+
+.hero{
+    padding: 90px 20px;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(34,179,120,.10), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(27,58,99,.08), transparent 45%),
+        #ffffff;
+    border-bottom: 1px solid #ECEFF3;
+}
+
+.hero h1{
+    font-size: 2.6rem;
+    color: var(--sf-primary);
+}
+
+.hero p{
+    color: var(--sf-muted);
+    font-size: 1.1rem;
+}
+
+.hero-illustration{
+    max-height: 420px;
+}
+
+/* ---------- Cartes génériques ---------- */
+
+.card{
+    border: 1px solid #ECEFF3;
+    border-radius: var(--sf-radius);
+    background: #fff;
+}
+
+.feature-icon{
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(34,179,120,.12);
+    color: var(--sf-accent-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+}
+
+/* ---------- Dashboard ---------- */
+
+.stat-card{
+    background: #fff;
+    border: 1px solid #ECEFF3;
+    border-radius: var(--sf-radius);
+    padding: 26px;
+    text-align: center;
+}
+
+.stat-number{
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--sf-primary);
+    margin-bottom: 6px;
+}
+
+.stat-label{
+    color: var(--sf-muted);
+    font-size: .9rem;
+}
+
+.dashboard-card{
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--sf-radius);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.dashboard-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(27,58,99,.08) !important;
+}
+
+.dashboard-card p{
+    color: var(--sf-muted);
+    flex-grow: 1;
+}
+
+/* ---------- Formulaires ---------- */
+
+.form-control, .form-select{
+    border-radius: 10px;
+    border: 1px solid #DCE2EA;
+    padding: 10px 14px;
+}
+
+.form-control:focus, .form-select:focus{
+    border-color: var(--sf-accent);
+    box-shadow: 0 0 0 3px rgba(34,179,120,.15);
+}
+
+/* ---------- Tableaux ---------- */
+
+.table thead{
+    background: var(--sf-bg);
+}
+
+.table thead th{
+    color: var(--sf-primary);
+    font-weight: 700;
+    border-bottom: 2px solid #ECEFF3;
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+    background: var(--sf-primary);
+    color: rgba(255,255,255,.75);
+    padding: 40px 20px 30px;
+    margin-top: 60px;
+}
+
+footer h4{
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+footer p{
+    margin-bottom: 4px;
+    font-size: .9rem;
+}
+
+/* ---------- Animations (dynamisme) ---------- */
+
+.sf-reveal{
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.sf-reveal-visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sf-fade-out{
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.alert{
+    animation: sf-slide-in .35s ease;
+}
+
+@keyframes sf-slide-in{
+    from{ opacity: 0; transform: translateY(-10px); }
+    to{ opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Témoignages ---------- */
+
+.testimonial-avatar{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--sf-primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: .85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.testimonial-card p{
+    color: var(--sf-text);
+}
+
+/* ---------- Sélecteur de langue ---------- */
+
+.lang-toggle{
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.lang-toggle::after{
+    margin-left: 6px;
+}
+
+/* ---------- Connexion / Inscription ---------- */
+
+.auth-card{
+    background: #fff;
+    border: 1px solid #ECEFF3;
+    border-radius: var(--sf-radius);
+    padding: 40px;
+}
+
+/* ---------- Simulateur / résultat ---------- */
+
+#resultat .alert{
+    border-radius: var(--sf-radius);
+}
