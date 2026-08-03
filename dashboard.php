@@ -27,21 +27,21 @@ include "includes/header.php";
 <div class="container py-5">
 
     <div class="mb-4">
-        <h1 class="fw-bold">Bienvenue, <?= e($user['prenom']) ?> 👋</h1>
-        <p class="text-muted">Voici un aperçu de votre espace SmartFinance.</p>
+        <h1 class="fw-bold"><?= t('dashboard_bienvenue') ?>, <?= e($user['prenom']) ?> 👋</h1>
+        <p class="text-muted"><?= t('dashboard_sous_titre') ?></p>
     </div>
 
     <div class="row g-3 mb-5">
         <div class="col-md-4">
             <div class="stat-card">
                 <div class="stat-number" data-count="<?= (int) $nb_demandes ?>">0</div>
-                <div class="stat-label">Demande(s) envoyée(s)</div>
+                <div class="stat-label"><?= t('dashboard_stat_demandes') ?></div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="stat-card">
                 <div class="stat-number" data-count="<?= (int) $nb_en_attente ?>">0</div>
-                <div class="stat-label">En attente de réponse</div>
+                <div class="stat-label"><?= t('dashboard_stat_attente') ?></div>
             </div>
         </div>
         <div class="col-md-4">
@@ -49,13 +49,19 @@ include "includes/header.php";
                 <div class="stat-number">
                     <?php if($derniere): ?>
                         <span class="badge bg-<?= $derniere['statut'] === 'Approuvé' ? 'success' : ($derniere['statut'] === 'Refusé' ? 'danger' : 'warning') ?>">
-                            <?= e($derniere['statut']) ?>
+                            <?php if ($derniere['statut'] === 'Approuvé'): ?>
+                                <?= t('admin_statut_approuve') ?>
+                            <?php elseif ($derniere['statut'] === 'Refusé'): ?>
+                                <?= t('admin_statut_refuse') ?>
+                            <?php else: ?>
+                                <?= t('admin_statut_attente') ?>
+                            <?php endif; ?>
                         </span>
                     <?php else: ?>
                         —
                     <?php endif; ?>
                 </div>
-                <div class="stat-label">Dernière demande</div>
+                <div class="stat-label"><?= t('dashboard_stat_derniere') ?></div>
             </div>
         </div>
     </div>
@@ -64,25 +70,25 @@ include "includes/header.php";
 
         <div class="col-md-4">
             <div class="card shadow-sm p-4 h-100 dashboard-card">
-                <h4><i class="fas fa-calculator text-primary"></i> Simulation</h4>
-                <p>Calculez rapidement votre capacité de remboursement.</p>
-                <a href="simulateur.php" class="btn btn-smart w-100 mt-auto">Simuler</a>
+                <h4><i class="fas fa-calculator text-primary"></i> <?= t('dashboard_simulation') ?></h4>
+                <p><?= t('dashboard_simulation_texte') ?></p>
+                <a href="simulateur.php" class="btn btn-smart w-100 mt-auto"><?= t('dashboard_simuler') ?></a>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="card shadow-sm p-4 h-100 dashboard-card">
-                <h4><i class="fas fa-hand-holding-dollar text-primary"></i> Demande de prêt</h4>
-                <p>Faites une nouvelle demande de financement.</p>
-                <a href="demande.php" class="btn btn-smart w-100 mt-auto">Demander un prêt</a>
+                <h4><i class="fas fa-hand-holding-dollar text-primary"></i> <?= t('dashboard_demande') ?></h4>
+                <p><?= t('dashboard_demande_texte') ?></p>
+                <a href="demande.php" class="btn btn-smart w-100 mt-auto"><?= t('dashboard_demande') ?></a>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="card shadow-sm p-4 h-100 dashboard-card">
-                <h4><i class="fas fa-clock-rotate-left text-primary"></i> Historique</h4>
-                <p>Consultez le suivi de toutes vos demandes.</p>
-                <a href="historique.php" class="btn btn-smart w-100 mt-auto">Voir l'historique</a>
+                <h4><i class="fas fa-clock-rotate-left text-primary"></i> <?= t('dashboard_historique') ?></h4>
+                <p><?= t('dashboard_historique_texte') ?></p>
+                <a href="historique.php" class="btn btn-smart w-100 mt-auto"><?= t('dashboard_voir_historique') ?></a>
             </div>
         </div>
 

@@ -10,17 +10,16 @@ require_once "includes/header.php";
 
             <div class="col-lg-6 text-lg-start text-center">
 
-                <h1 class="mb-3">Obtenez votre financement simplement</h1>
+                <h1 class="mb-3"><?= t('accueil_titre') ?></h1>
 
                 <p class="mb-4">
-                    SmartFinance vous accompagne dans vos projets
-                    avec des solutions de prêt rapides et sécurisées.
+                    <?= t('accueil_texte') ?>
                 </p>
 
                 <?php if(utilisateurConnecte()): ?>
-                    <a href="demande.php" class="btn btn-smart btn-lg">Demander un prêt</a>
+                    <a href="demande.php" class="btn btn-smart btn-lg"><?= t('accueil_bouton') ?></a>
                 <?php else: ?>
-                    <a href="inscription.php" class="btn btn-smart btn-lg">Demander un prêt</a>
+                    <a href="inscription.php" class="btn btn-smart btn-lg"><?= t('accueil_bouton') ?></a>
                 <?php endif; ?>
 
             </div>
@@ -41,28 +40,93 @@ require_once "includes/header.php";
         <div class="col-md-4">
             <div class="card shadow-sm p-4 h-100">
                 <div class="feature-icon"><i class="fas fa-calculator"></i></div>
-                <h4>Simulation rapide</h4>
-                <p>Calculez votre capacité de remboursement en quelques secondes.</p>
+                <h4><?= t('accueil_feature1_titre') ?></h4>
+                <p><?= t('accueil_feature1_texte') ?></p>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="card shadow-sm p-4 h-100">
                 <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
-                <h4>Sécurité</h4>
-                <p>Vos informations sont protégées et traitées en toute confidentialité.</p>
+                <h4><?= t('accueil_feature2_titre') ?></h4>
+                <p><?= t('accueil_feature2_texte') ?></p>
             </div>
         </div>
 
         <div class="col-md-4">
             <div class="card shadow-sm p-4 h-100">
                 <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                <h4>Suivi facile</h4>
-                <p>Consultez l'état de vos demandes en temps réel, où que vous soyez.</p>
+                <h4><?= t('accueil_feature3_titre') ?></h4>
+                <p><?= t('accueil_feature3_texte') ?></p>
             </div>
         </div>
 
     </div>
+</section>
+
+<section class="container py-5">
+
+    <div class="text-center mb-5">
+        <h2><?= t('temoignages_titre') ?></h2>
+        <p class="text-muted"><?= t('temoignages_soustitre') ?></p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100 testimonial-card">
+                <div class="mb-3 text-warning">★★★★★</div>
+                <p class="fst-italic">
+                    « <?= t('temoignage1_texte') ?> »
+                </p>
+                <div class="d-flex align-items-center mt-3">
+                    <div class="testimonial-avatar">AK</div>
+                    <div class="ms-3">
+                        <div class="fw-bold">Aïcha K.</div>
+                        <div class="text-muted small"><?= t('temoignage1_role') ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100 testimonial-card">
+                <div class="mb-3 text-warning">★★★★★</div>
+                <p class="fst-italic">
+                    « <?= t('temoignage2_texte') ?> »
+                </p>
+                <div class="d-flex align-items-center mt-3">
+                    <div class="testimonial-avatar">MT</div>
+                    <div class="ms-3">
+                        <div class="fw-bold">Marius T.</div>
+                        <div class="text-muted small"><?= t('temoignage2_role') ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100 testimonial-card">
+                <div class="mb-3 text-warning">★★★★★</div>
+                <p class="fst-italic">
+                    « <?= t('temoignage3_texte') ?> »
+                </p>
+                <div class="d-flex align-items-center mt-3">
+                    <div class="testimonial-avatar">SL</div>
+                    <div class="ms-3">
+                        <div class="fw-bold">Sandrine L.</div>
+                        <div class="text-muted small"><?= t('temoignage3_role') ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="text-center text-muted small mt-4">
+        <?= t('temoignages_note') ?>
+    </p>
+
 </section>
 
 <?php require_once "includes/footer.php"; ?>

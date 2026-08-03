@@ -25,7 +25,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'supprimer' && isset($_POST[
         $suppr = $pdo->prepare('DELETE FROM utilisateurs WHERE id = ? AND role != "admin"');
         $suppr->execute([(int) $_POST['utilisateur_id']]);
     } catch (PDOException $e) {
-        $erreur = "Impossible de supprimer cet utilisateur : il a des demandes de prêt liées à son compte. Désactivez-le plutôt.";
+        $erreur = t('admin_erreur_suppression');
     }
 }
 
@@ -35,8 +35,8 @@ require_once __DIR__ . '/../includes/header.php';
 ?>
 <div class="container mt-4">
     <div class="card p-4">
-        <h1>Utilisateurs</h1>
-        <a href="index.php" class="btn btn-secondary mb-3">Retour au tableau de bord</a>
+        <h1><?= t('admin_utilisateurs_titre') ?></h1>
+        <a href="index.php" class="btn btn-secondary mb-3"><?= t('admin_retour') ?></a>
 
         <?php if ($erreur): ?>
             <div class="alert alert-danger"><?= e($erreur) ?></div>
@@ -45,11 +45,11 @@ require_once __DIR__ . '/../includes/header.php';
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Nom</th>
-                    <th>Email</th>
-                    <th>Rôle</th>
-                    <th>Statut</th>
-                    <th>Actions</th>
+                    <th><?= t('admin_nom') ?></th>
+                    <th><?= t('admin_email') ?></th>
+                    <th><?= t('admin_role') ?></th>
+                    <th><?= t('admin_statut') ?></th>
+                    <th><?= t('admin_actions') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -68,16 +68,16 @@ require_once __DIR__ . '/../includes/header.php';
                                         <input type="hidden" name="utilisateur_id" value="<?= (int) $utilisateur['id'] ?>">
                                         <input type="hidden" name="statut" value="<?= $utilisateur['statut'] === 'actif' ? 'inactif' : 'actif' ?>">
                                         <button type="submit" class="btn btn-sm btn-outline-<?= $utilisateur['statut'] === 'actif' ? 'warning' : 'success' ?>">
-                                            <?= $utilisateur['statut'] === 'actif' ? 'Désactiver' : 'Activer' ?>
+                                            <?= $utilisateur['statut'] === 'actif' ? t('admin_desactiver') : t('admin_activer') ?>
                                         </button>
                                     </form>
 
-                                    <form method="post" onsubmit="return confirm('Supprimer définitivement cet utilisateur ?');">
+                                    <form method="post" onsubmit="return confirm('<?= e(t('admin_confirmer_suppression')) ?>');">
                                         <?= csrf_field() ?>
                                         <input type="hidden" name="action" value="supprimer">
                                         <input type="hidden" name="utilisateur_id" value="<?= (int) $utilisateur['id'] ?>">
                                         <button type="submit" class="btn btn-sm btn-outline-danger">
-                                            Supprimer
+                                            <?= t('admin_supprimer') ?>
                                         </button>
                                     </form>
                                 </div>

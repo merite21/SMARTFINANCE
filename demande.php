@@ -2,6 +2,7 @@
 
 require_once "config/config.php";
 require_once "config/fonctions.php";
+require_once "config/mail.php";
 
 obligerConnexion();
 
@@ -48,11 +49,11 @@ if(isset($_POST['envoyer'])){
 
         if(!in_array($extension, $extensionsAutorisees, true)){
 
-            $erreurFichier = "Format de fichier non autorisé (PDF, JPG ou PNG uniquement).";
+            $erreurFichier = t('demande_erreur_format');
 
         }elseif($_FILES['document']['size'] > $tailleMaxOctets){
 
-            $erreurFichier = "Le fichier est trop volumineux (5 Mo maximum).";
+            $erreurFichier = t('demande_erreur_taille');
 
         }else{
 
@@ -107,9 +108,18 @@ if(isset($_POST['envoyer'])){
 
 
 
-        $message = "Votre demande a été envoyée avec succès.";
+        $message = t('demande_succes');
         $succes = true;
 
+    notifierProprietaire(
+    "Nouvelle demande de prêt sur SmartFinance",
+    "<h3>Nouvelle demande de prêt</h3>
+    <p><strong>Client :</strong> " . $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] . "</p>
+    <p><strong>Email :</strong> " . $_SESSION['user']['email'] . "</p>
+    <p><strong>Montant :</strong> " . $montant . " FCFA</p>
+    <p><strong>Durée :</strong> " . $duree . " mois</p>
+    <p><strong>Objet :</strong> " . $objet . "</p>"
+);
     }
 
 }
@@ -138,7 +148,7 @@ include "includes/header.php";
 
 <i class="fas fa-hand-holding-dollar"></i>
 
-Demande de prêt
+<?= t('demande_titre') ?>
 
 </h2>
 
@@ -164,7 +174,7 @@ enctype="multipart/form-data">
 <div class="mb-3">
 
 <label>
-Montant demandé (FCFA)
+<?= t('demande_montant_label') ?>
 </label>
 
 
@@ -180,7 +190,7 @@ required>
 <div class="mb-3">
 
 <label>
-Durée du remboursement
+<?= t('demande_duree_label') ?>
 </label>
 
 
@@ -189,22 +199,22 @@ class="form-control">
 
 
 <option value="6">
-6 mois
+6 <?= t('unite_mois') ?>
 </option>
 
 
 <option value="12">
-12 mois
+12 <?= t('unite_mois') ?>
 </option>
 
 
 <option value="24">
-24 mois
+24 <?= t('unite_mois') ?>
 </option>
 
 
 <option value="36">
-36 mois
+36 <?= t('unite_mois') ?>
 </option>
 
 
@@ -218,14 +228,14 @@ class="form-control">
 <div class="mb-3">
 
 <label>
-Objet du prêt
+<?= t('demande_objet_label') ?>
 </label>
 
 
 <textarea name="objet"
 class="form-control"
 rows="4"
-placeholder="Expliquez votre projet..."
+placeholder="<?= e(t('demande_objet_placeholder')) ?>"
 required></textarea>
 
 
@@ -236,7 +246,7 @@ required></textarea>
 <div class="mb-3">
 
 <label>
-Document justificatif (PDF/JPG/PNG)
+<?= t('demande_document_label') ?>
 </label>
 
 
@@ -252,7 +262,7 @@ class="form-control">
 <button class="btn btn-smart w-100"
 name="envoyer">
 
-Envoyer ma demande
+<?= t('demande_envoyer') ?>
 
 </button>
 

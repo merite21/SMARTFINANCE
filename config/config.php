@@ -8,6 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 require_once "database.php";
+require_once "lang.php";
 
 define("SITE_NAME", "SMARTFINANCE");
 

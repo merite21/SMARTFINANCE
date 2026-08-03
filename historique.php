@@ -38,7 +38,7 @@ include "includes/header.php";
 
 <i class="fas fa-clock"></i>
 
-Historique de mes demandes
+<?= t('historique_titre') ?>
 
 </h2>
 
@@ -63,15 +63,15 @@ Historique de mes demandes
 
 <th>#</th>
 
-<th>Montant</th>
+<th><?= t('historique_montant') ?></th>
 
-<th>Durée</th>
+<th><?= t('historique_duree') ?></th>
 
-<th>Mensualité</th>
+<th><?= t('historique_mensualite') ?></th>
 
-<th>Date</th>
+<th><?= t('historique_date') ?></th>
 
-<th>Statut</th>
+<th><?= t('historique_statut') ?></th>
 
 </tr>
 
@@ -100,7 +100,7 @@ Historique de mes demandes
 
 
 <td>
-<?= $demande['duree']; ?> mois
+<?= $demande['duree']; ?> <?= t('unite_mois') ?>
 </td>
 
 
@@ -122,7 +122,7 @@ Historique de mes demandes
 
 
 <span class="badge bg-success">
-Approuvé
+<?= t('admin_statut_approuve') ?>
 </span>
 
 
@@ -130,7 +130,7 @@ Approuvé
 
 
 <span class="badge bg-danger">
-Refusé
+<?= t('admin_statut_refuse') ?>
 </span>
 
 
@@ -138,7 +138,7 @@ Refusé
 
 
 <span class="badge bg-warning text-dark">
-En attente
+<?= t('admin_statut_attente') ?>
 </span>
 
 
@@ -170,7 +170,7 @@ En attente
 
 <div class="alert alert-info text-center">
 
-Vous n'avez encore effectué aucune demande de prêt.
+<?= t('historique_aucune') ?>
 
 </div>
 

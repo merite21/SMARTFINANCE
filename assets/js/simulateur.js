@@ -28,34 +28,43 @@ let total = Number(montant) + Number(interet);
 let mensualite = total / duree;
 
 
+let i18n = window.i18nSimulateur || {
+    resultatTitre: "Résultat de votre simulation",
+    montant: "Montant demandé :",
+    duree: "Durée :",
+    taux: "Taux :",
+    mensualite: "Mensualité estimée :",
+    mois: "mois"
+};
+
 
 document.getElementById("resultat").innerHTML = `
 
 <div class="alert alert-success">
 
-<h4>Résultat de votre simulation</h4>
+<h4>${i18n.resultatTitre}</h4>
 
 
 <p>
-Montant demandé :
+${i18n.montant}
 <strong>${Number(montant).toLocaleString()} FCFA</strong>
 </p>
 
 
 <p>
-Durée :
-<strong>${duree} mois</strong>
+${i18n.duree}
+<strong>${duree} ${i18n.mois}</strong>
 </p>
 
 
 <p>
-Taux :
+${i18n.taux}
 <strong>${taux}%</strong>
 </p>
 
 
 <p>
-Mensualité estimée :
+${i18n.mensualite}
 <strong>
 ${Math.round(mensualite).toLocaleString()} FCFA
 </strong>

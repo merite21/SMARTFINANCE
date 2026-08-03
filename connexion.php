@@ -86,7 +86,7 @@ $message="Email ou mot de passe incorrect";
 
         <h2 class="text-center mb-4">
             <i class="fas fa-right-to-bracket text-primary"></i>
-            Connexion
+            <?= t('connexion_titre') ?>
         </h2>
 
         <?php if($message): ?>
@@ -99,27 +99,27 @@ $message="Email ou mot de passe incorrect";
             class="form-control mb-3"
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="<?= t('connexion_email') ?>"
             required>
 
             <input
             class="form-control mb-3"
             type="password"
             name="password"
-            placeholder="Mot de passe"
+            placeholder="<?= t('connexion_mdp') ?>"
             required>
 
             <button
             class="btn btn-smart w-100"
             name="connexion">
-                Se connecter
+                <?= t('connexion_bouton') ?>
             </button>
 
         </form>
 
         <p class="text-center text-muted mt-4 mb-0">
-            Pas encore de compte ?
-            <a href="inscription.php" class="fw-semibold">Créer un compte</a>
+            <?= t('connexion_pas_de_compte') ?>
+            <a href="inscription.php" class="fw-semibold"><?= t('connexion_creer_compte') ?></a>
         </p>
 
     </div>

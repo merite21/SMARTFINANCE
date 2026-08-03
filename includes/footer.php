@@ -6,15 +6,13 @@
 
 <p>
 
-Votre partenaire financier de confiance.
+<?= t('footer_texte') ?>
 
 </p>
 
 <p>
 
-© <?= date('Y'); ?> SMARTFINANCE
-
-Tous droits réservés.
+© <?= date('Y'); ?> SMARTFINANCE — <?= t('footer_droits') ?>
 
 </p>
 

@@ -37,11 +37,11 @@ require_once __DIR__ . '/../includes/header.php';
 ?>
 <div class="container mt-4">
     <div class="card p-4 mb-4">
-        <h1>Remboursements</h1>
-        <a href="index.php" class="btn btn-secondary mb-3">Retour au tableau de bord</a>
+        <h1><?= t('admin_remboursements_titre') ?></h1>
+        <a href="index.php" class="btn btn-secondary mb-3"><?= t('admin_retour') ?></a>
         <table class="table table-striped">
             <thead>
-                <tr><th>Client</th><th>Montant payé</th><th>Date</th><th>Statut</th></tr>
+                <tr><th><?= t('admin_client') ?></th><th><?= t('admin_montant_paye') ?></th><th><?= t('admin_date') ?></th><th><?= t('admin_statut') ?></th></tr>
             </thead>
             <tbody>
                 <?php foreach ($remboursements as $r): ?>
@@ -53,16 +53,16 @@ require_once __DIR__ . '/../includes/header.php';
                     </tr>
                 <?php endforeach; ?>
                 <?php if (empty($remboursements)): ?>
-                    <tr><td colspan="4">Aucun remboursement enregistré.</td></tr>
+                    <tr><td colspan="4"><?= t('admin_aucun_remboursement') ?></td></tr>
                 <?php endif; ?>
             </tbody>
         </table>
     </div>
 
     <div class="card p-4">
-        <h2>Enregistrer un remboursement</h2>
+        <h2><?= t('admin_enregistrer_remboursement') ?></h2>
         <?php if (empty($demandes_approuvees)): ?>
-            <p>Aucune demande approuvée pour le moment.</p>
+            <p><?= t('admin_aucune_demande_approuvee') ?></p>
         <?php else: ?>
             <form method="post" class="row g-2">
                 <?= csrf_field() ?>
@@ -78,10 +78,10 @@ require_once __DIR__ . '/../includes/header.php';
                     </select>
                 </div>
                 <div class="col-md-3">
-                    <input type="number" step="0.01" name="montant" class="form-control" placeholder="Montant payé" required>
+                    <input type="number" step="0.01" name="montant" class="form-control" placeholder="<?= e(t('admin_montant_paye')) ?>" required>
                 </div>
                 <div class="col-md-3">
-                    <button type="submit" class="btn btn-primary w-100">Enregistrer</button>
+                    <button type="submit" class="btn btn-primary w-100"><?= t('admin_enregistrer') ?></button>
                 </div>
             </form>
         <?php endif; ?>

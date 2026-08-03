@@ -21,7 +21,7 @@ include "includes/header.php";
 
 <i class="fas fa-calculator"></i>
 
-Simulateur de prêt SMARTFINANCE
+<?= t('sim_titre') ?>
 
 </h2>
 
@@ -32,7 +32,7 @@ Simulateur de prêt SMARTFINANCE
 <div class="mb-3">
 
 <label>
-Montant du prêt (FCFA)
+<?= t('sim_montant_label') ?>
 </label>
 
 <input type="number"
@@ -48,29 +48,29 @@ required>
 <div class="mb-3">
 
 <label>
-Durée (mois)
+<?= t('sim_duree_label') ?>
 </label>
 
 
 <select id="duree"
 class="form-control">
 
-<option value="6">6 mois</option>
+<option value="6">6 <?= t('unite_mois') ?></option>
 
 <option value="12">
-12 mois
+12 <?= t('unite_mois') ?>
 </option>
 
 <option value="24">
-24 mois
+24 <?= t('unite_mois') ?>
 </option>
 
 <option value="36">
-36 mois
+36 <?= t('unite_mois') ?>
 </option>
 
 <option value="48">
-48 mois
+48 <?= t('unite_mois') ?>
 </option>
 
 </select>
@@ -83,7 +83,7 @@ class="form-control">
 onclick="calculerPret()"
 class="btn btn-smart w-100">
 
-Calculer
+<?= t('sim_calculer') ?>
 
 </button>
 
@@ -112,7 +112,16 @@ class="text-center mt-4">
 </div>
 
 
-
+<script>
+window.i18nSimulateur = {
+    resultatTitre: <?= json_encode(t('sim_resultat_titre')) ?>,
+    montant: <?= json_encode(t('sim_resultat_montant')) ?>,
+    duree: <?= json_encode(t('sim_resultat_duree')) ?>,
+    taux: <?= json_encode(t('sim_resultat_taux')) ?>,
+    mensualite: <?= json_encode(t('sim_resultat_mensualite')) ?>,
+    mois: <?= json_encode(t('unite_mois')) ?>
+};
+</script>
 <script src="assets/js/simulateur.js"></script>
 
 

@@ -2,6 +2,7 @@
 
 require_once "config/config.php";
 require_once "config/fonctions.php";
+require_once "config/mail.php";
 
 
 $message = "";
@@ -71,6 +72,14 @@ if(isset($_POST['inscription'])){
         $nouvelUtilisateur->execute([$email]);
         $_SESSION['user'] = $nouvelUtilisateur->fetch();
 
+        notifierProprietaire(
+    "Nouvelle inscription sur SmartFinance",
+    "<h3>Nouveau compte créé</h3>
+    <p><strong>Nom :</strong> " . $nom . " " . $prenom . "</p>
+    <p><strong>Email :</strong> " . $email . "</p>
+    <p><strong>Téléphone :</strong> " . $telephone . "</p>"
+); 
+
         redirect("dashboard.php");
 
 
@@ -93,7 +102,7 @@ if(isset($_POST['inscription'])){
 
         <h2 class="text-center mb-4">
             <i class="fas fa-user-plus text-primary"></i>
-            Créer un compte
+            <?= t('inscription_titre') ?>
         </h2>
 
         <?php if($message): ?>
@@ -108,48 +117,48 @@ if(isset($_POST['inscription'])){
             class="form-control mb-3"
             type="text"
             name="nom"
-            placeholder="Nom"
+            placeholder="<?= t('inscription_nom') ?>"
             required>
 
             <input
             class="form-control mb-3"
             type="text"
             name="prenom"
-            placeholder="Prénom"
+            placeholder="<?= t('inscription_prenom') ?>"
             required>
 
             <input
             class="form-control mb-3"
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="<?= t('inscription_email') ?>"
             required>
 
             <input
             class="form-control mb-3"
             type="text"
             name="telephone"
-            placeholder="Téléphone">
+            placeholder="<?= t('inscription_telephone') ?>">
 
             <input
             class="form-control mb-3"
             type="password"
             name="password"
-            placeholder="Mot de passe"
+            placeholder="<?= t('inscription_mdp') ?>"
             minlength="6"
             required>
 
             <button
             class="btn btn-smart w-100"
             name="inscription">
-                Créer mon compte
+                <?= t('inscription_bouton') ?>
             </button>
 
         </form>
 
         <p class="text-center text-muted mt-4 mb-0">
-            Déjà un compte ?
-            <a href="connexion.php" class="fw-semibold">Se connecter</a>
+            <?= t('inscription_deja_compte') ?>
+            <a href="connexion.php" class="fw-semibold"><?= t('inscription_se_connecter') ?></a>
         </p>
 
     </div>

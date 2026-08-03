@@ -10,8 +10,8 @@ require_once __DIR__ . '/../includes/header.php';
 ?>
 <div class="container mt-4">
     <div class="card p-4">
-        <h1>Clients</h1>
-        <a href="index.php" class="btn btn-secondary mb-3">Retour au tableau de bord</a>
+        <h1><?= t('admin_clients_titre') ?></h1>
+        <a href="index.php" class="btn btn-secondary mb-3"><?= t('admin_retour') ?></a>
         <ul class="list-group">
             <?php foreach ($clients as $client): ?>
                 <li class="list-group-item">
@@ -23,7 +23,7 @@ require_once __DIR__ . '/../includes/header.php';
                 </li>
             <?php endforeach; ?>
             <?php if (empty($clients)): ?>
-                <li class="list-group-item">Aucun client pour le moment.</li>
+                <li class="list-group-item"><?= t('admin_aucun_client') ?></li>
             <?php endif; ?>
         </ul>
     </div>
