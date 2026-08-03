@@ -27,6 +27,8 @@ CREATE TABLE demandes (
     taux DECIMAL(5,2) NOT NULL,
     mensualite DECIMAL(12,2),
     objet TEXT,
+    document VARCHAR(255),
+    revenu_mensuel DECIMAL(12,2),
     statut ENUM('En attente','Approuvé','Refusé') DEFAULT 'En attente',
     date_demande TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (utilisateur_id) REFERENCES utilisateurs(id)
@@ -54,6 +56,18 @@ CREATE TABLE remboursements (
     date_paiement DATE,
     statut ENUM('Payé','En attente') DEFAULT 'En attente',
     FOREIGN KEY (demande_id) REFERENCES demandes(id)
+);
+
+-- ===========================
+-- TABLE DES MESSAGES DE CONTACT
+-- ===========================
+CREATE TABLE messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(150) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    sujet VARCHAR(200),
+    contenu TEXT,
+    date_envoi TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ===========================

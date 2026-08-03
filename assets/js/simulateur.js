@@ -6,6 +6,12 @@ let montant = document.getElementById("montant").value;
 let duree = document.getElementById("duree").value;
 
 
+if(!montant || montant <= 0){
+    document.getElementById("resultat").innerHTML = "";
+    return;
+}
+
+
 // taux annuel
 
 let taux = 10;
@@ -61,3 +67,16 @@ ${Math.round(mensualite).toLocaleString()} FCFA
 `;
 
 }
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const champMontant = document.getElementById("montant");
+    const champDuree = document.getElementById("duree");
+
+    if(champMontant && champDuree){
+        champMontant.addEventListener("input", calculerPret);
+        champDuree.addEventListener("change", calculerPret);
+    }
+
+});

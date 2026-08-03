@@ -1,161 +1,68 @@
 <?php
+require_once "config/config.php";
 require_once "config/fonctions.php";
+require_once "includes/header.php";
 ?>
 
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>SMARTFINANCE</title>
-
-
-<link 
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-rel="stylesheet">
-
-
-<link rel="stylesheet" href="assets/css/style.css">
-
-
-</head>
-
-
-<body>
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-
-<div class="container">
-
-<a class="navbar-brand fw-bold"
-href="#">
-SMARTFINANCE
-</a>
-
-
-<div>
-
-<a href="inscription.php"
-class="btn btn-light">
-Créer un compte
-</a>
-
-
-<a href="connexion.php"
-class="btn btn-outline-light">
-Connexion
-</a>
-
-</div>
-
-</div>
-
-</nav>
-
-
-
 <section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
 
-<div class="container text-center">
+            <div class="col-lg-6 text-lg-start text-center">
 
+                <h1 class="mb-3">Obtenez votre financement simplement</h1>
 
-<h1>
-Obtenez votre financement simplement
-</h1>
+                <p class="mb-4">
+                    SmartFinance vous accompagne dans vos projets
+                    avec des solutions de prêt rapides et sécurisées.
+                </p>
 
+                <?php if(utilisateurConnecte()): ?>
+                    <a href="demande.php" class="btn btn-smart btn-lg">Demander un prêt</a>
+                <?php else: ?>
+                    <a href="inscription.php" class="btn btn-smart btn-lg">Demander un prêt</a>
+                <?php endif; ?>
 
-<p>
-SMARTFINANCE vous accompagne dans vos projets
-avec des solutions de prêt rapides et sécurisées.
-</p>
+            </div>
 
+            <div class="col-lg-6 mt-5 mt-lg-0">
+                <img src="<?= SITE_URL ?>assets/img/hero-banque.svg"
+                     alt="Agence SmartFinance"
+                     class="img-fluid hero-illustration">
+            </div>
 
-<a href="inscription.php"
-class="btn btn-primary btn-lg">
-Demander un prêt
-</a>
-
-
-</div>
-
+        </div>
+    </div>
 </section>
-
-
 
 <section class="container py-5">
+    <div class="row g-4">
 
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100">
+                <div class="feature-icon"><i class="fas fa-calculator"></i></div>
+                <h4>Simulation rapide</h4>
+                <p>Calculez votre capacité de remboursement en quelques secondes.</p>
+            </div>
+        </div>
 
-<div class="row">
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100">
+                <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                <h4>Sécurité</h4>
+                <p>Vos informations sont protégées et traitées en toute confidentialité.</p>
+            </div>
+        </div>
 
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100">
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                <h4>Suivi facile</h4>
+                <p>Consultez l'état de vos demandes en temps réel, où que vous soyez.</p>
+            </div>
+        </div>
 
-<div class="col-md-4">
-
-<div class="card shadow p-4">
-
-<h4>
-Simulation rapide
-</h4>
-
-<p>
-Calculez votre capacité de remboursement.
-</p>
-
-</div>
-
-</div>
-
-
-
-<div class="col-md-4">
-
-<div class="card shadow p-4">
-
-<h4>
-Sécurité
-</h4>
-
-<p>
-Vos informations sont protégées.
-</p>
-
-</div>
-
-</div>
-
-
-
-
-<div class="col-md-4">
-
-<div class="card shadow p-4">
-
-<h4>
-Suivi facile
-</h4>
-
-<p>
-Consultez vos demandes en temps réel.
-</p>
-
-</div>
-
-</div>
-
-
-
-</div>
-
-
+    </div>
 </section>
 
-
-
-</body>
-
-</html>
+<?php require_once "includes/footer.php"; ?>

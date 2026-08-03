@@ -6,7 +6,7 @@ require_once "config/fonctions.php";
 obligerConnexion();
 
 
-$id_client = $_SESSION['id'];
+$id_client = $_SESSION['user']['id'];
 
 
 
@@ -27,7 +27,6 @@ $demandes = $req->fetchAll();
 
 
 include "includes/header.php";
-include "includes/navbar.php";
 
 ?>
 

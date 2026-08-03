@@ -1,6 +1,6 @@
 <?php
 
-require_once "config/database.php";
+require_once "config/config.php";
 require_once "config/fonctions.php";
 
 
@@ -14,6 +14,18 @@ if(isset($_POST['inscription'])){
     $prenom = securiser($_POST['prenom']);
     $email = securiser($_POST['email']);
     $telephone = securiser($_POST['telephone']);
+
+
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+
+        $message = "Adresse email invalide.";
+
+    }elseif(strlen($_POST['password']) < 6){
+
+        $message = "Le mot de passe doit contenir au moins 6 caractères.";
+
+    }else{
+
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 
@@ -39,7 +51,7 @@ if(isset($_POST['inscription'])){
         $req = $pdo->prepare(
 
             "INSERT INTO utilisateurs
-            (nom,prenom,email,telephone,password)
+            (nom,prenom,email,telephone,mot_de_passe)
             VALUES (?,?,?,?,?)"
 
         );
@@ -54,8 +66,15 @@ if(isset($_POST['inscription'])){
         ]);
 
 
-        $message = "Compte créé avec succès";
+        // Connexion automatique + redirection vers le tableau de bord
+        $nouvelUtilisateur = $pdo->prepare("SELECT * FROM utilisateurs WHERE email = ?");
+        $nouvelUtilisateur->execute([$email]);
+        $_SESSION['user'] = $nouvelUtilisateur->fetch();
 
+        redirect("dashboard.php");
+
+
+    }
 
     }
 
@@ -67,110 +86,73 @@ if(isset($_POST['inscription'])){
 ?>
 
 
-<!DOCTYPE html>
-<html lang="fr">
+<?php require_once "includes/header.php"; ?>
 
-<head>
+<div class="container py-5">
+    <div class="auth-card shadow-sm col-md-6 mx-auto">
 
-<meta charset="UTF-8">
+        <h2 class="text-center mb-4">
+            <i class="fas fa-user-plus text-primary"></i>
+            Créer un compte
+        </h2>
 
-<title>Inscription - SmartFinance</title>
+        <?php if($message): ?>
+            <div class="alert alert-<?= str_contains($message, 'succès') ? 'success' : 'info' ?>">
+                <?= e($message) ?>
+            </div>
+        <?php endif; ?>
 
-<link 
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-rel="stylesheet">
+        <form method="POST">
 
-</head>
+            <input
+            class="form-control mb-3"
+            type="text"
+            name="nom"
+            placeholder="Nom"
+            required>
 
+            <input
+            class="form-control mb-3"
+            type="text"
+            name="prenom"
+            placeholder="Prénom"
+            required>
 
-<body class="bg-light">
+            <input
+            class="form-control mb-3"
+            type="email"
+            name="email"
+            placeholder="Email"
+            required>
 
+            <input
+            class="form-control mb-3"
+            type="text"
+            name="telephone"
+            placeholder="Téléphone">
 
-<div class="container mt-5">
+            <input
+            class="form-control mb-3"
+            type="password"
+            name="password"
+            placeholder="Mot de passe"
+            minlength="6"
+            required>
 
+            <button
+            class="btn btn-smart w-100"
+            name="inscription">
+                Créer mon compte
+            </button>
 
-<div class="col-md-6 mx-auto card p-4 shadow">
+        </form>
 
+        <p class="text-center text-muted mt-4 mb-0">
+            Déjà un compte ?
+            <a href="connexion.php" class="fw-semibold">Se connecter</a>
+        </p>
 
-<h2 class="text-center">
-Créer un compte
-</h2>
-
-
-<?php if($message): ?>
-
-<div class="alert alert-info">
-<?= $message ?>
+    </div>
 </div>
 
-<?php endif; ?>
-
-
-<form method="POST">
-
-
-<input 
-class="form-control mb-3"
-type="text"
-name="nom"
-placeholder="Nom"
-required>
-
-
-
-<input 
-class="form-control mb-3"
-type="text"
-name="prenom"
-placeholder="Prénom"
-required>
-
-
-
-<input 
-class="form-control mb-3"
-type="email"
-name="email"
-placeholder="Email"
-required>
-
-
-
-<input 
-class="form-control mb-3"
-type="text"
-name="telephone"
-placeholder="Téléphone">
-
-
-
-<input 
-class="form-control mb-3"
-type="password"
-name="password"
-placeholder="Mot de passe"
-required>
-
-
-
-<button
-class="btn btn-primary w-100"
-name="inscription">
-
-Créer mon compte
-
-</button>
-
-
-</form>
-
-
-</div>
-
-
-</div>
-
-
-</body>
-
-</html>
+<?php require_once "includes/footer.php"; ?>

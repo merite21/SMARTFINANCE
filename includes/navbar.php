@@ -39,18 +39,25 @@
                     </a>
                 </li>
 
-              <?php if(isset($_SESSION['id'])): ?>
+              <?php if(isset($_SESSION['user'])): ?>
+
+<?php if($_SESSION['user']['role'] === 'admin'): ?>
 
 <li class="nav-item">
-
-<a class="btn btn-light ms-3"
-href="<?= SITE_URL ?>dashboard.php">
-
-Mon espace
-
+<a class="btn btn-light ms-3" href="<?= SITE_URL ?>admin/index.php">
+Administration
 </a>
-
 </li>
+
+<?php else: ?>
+
+<li class="nav-item">
+<a class="btn btn-light ms-3" href="<?= SITE_URL ?>dashboard.php">
+Mon espace
+</a>
+</li>
+
+<?php endif; ?>
 
 
 <li class="nav-item">

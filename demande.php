@@ -7,6 +7,7 @@ obligerConnexion();
 
 
 $message = "";
+$succes = false;
 
 
 if(isset($_POST['envoyer'])){
@@ -33,62 +34,89 @@ if(isset($_POST['envoyer'])){
     // Gestion fichier
 
     $document = "";
+    $erreurFichier = "";
 
 
-    if(isset($_FILES['document']) 
+    if(isset($_FILES['document'])
     && $_FILES['document']['error']==0){
 
 
-        $nomFichier = time()."_".$_FILES['document']['name'];
+        $extensionsAutorisees = ['pdf','jpg','jpeg','png'];
+        $tailleMaxOctets = 5 * 1024 * 1024; // 5 Mo
 
+        $extension = strtolower(pathinfo($_FILES['document']['name'], PATHINFO_EXTENSION));
 
-        $chemin = "uploads/".$nomFichier;
+        if(!in_array($extension, $extensionsAutorisees, true)){
 
+            $erreurFichier = "Format de fichier non autorisé (PDF, JPG ou PNG uniquement).";
 
-        move_uploaded_file(
-            $_FILES['document']['tmp_name'],
-            $chemin
-        );
+        }elseif($_FILES['document']['size'] > $tailleMaxOctets){
 
+            $erreurFichier = "Le fichier est trop volumineux (5 Mo maximum).";
 
-        $document = $nomFichier;
+        }else{
+
+            if(!is_dir("uploads")){
+                mkdir("uploads", 0755, true);
+            }
+
+            $nomFichier = time()."_".bin2hex(random_bytes(4)).".".$extension;
+
+            $chemin = "uploads/".$nomFichier;
+
+            move_uploaded_file(
+                $_FILES['document']['tmp_name'],
+                $chemin
+            );
+
+            $document = $nomFichier;
+
+        }
 
     }
 
 
 
-    $req = $pdo->prepare(
+    if($erreurFichier){
 
-    "INSERT INTO demandes
-    (utilisateur_id,montant,duree,taux,mensualite,objet,document)
-    VALUES (?,?,?,?,?,?,?)"
+        $message = $erreurFichier;
 
-    );
+    }else{
 
+        $req = $pdo->prepare(
 
+        "INSERT INTO demandes
+        (utilisateur_id,montant,duree,taux,mensualite,objet,document)
+        VALUES (?,?,?,?,?,?,?)"
 
-    $req->execute([
-
-        $_SESSION['id'],
-        $montant,
-        $duree,
-        $taux,
-        $mensualite,
-        $objet,
-        $document
-
-    ]);
+        );
 
 
 
-    $message = "Votre demande a été envoyée avec succès.";
+        $req->execute([
+
+            $_SESSION['user']['id'],
+            $montant,
+            $duree,
+            $taux,
+            $mensualite,
+            $objet,
+            $document
+
+        ]);
+
+
+
+        $message = "Votre demande a été envoyée avec succès.";
+        $succes = true;
+
+    }
 
 }
 
 
 
 include "includes/header.php";
-include "includes/navbar.php";
 
 ?>
 
@@ -118,9 +146,9 @@ Demande de prêt
 
 <?php if($message): ?>
 
-<div class="alert alert-success">
+<div class="alert alert-<?= $succes ? 'success' : 'danger' ?>">
 
-<?= $message ?>
+<?= e($message) ?>
 
 </div>
 
