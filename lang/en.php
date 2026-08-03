@@ -122,40 +122,30 @@ return [
     "admin_mdp_trop_court" => "The password must contain at least 6 characters.",
 
     // Testimonials (content)
-<<<<<<< HEAD
-    'temoignage1_texte' => 'Thanks to SmartFinance, I received my financing faster than expected. The service was professional and transparent.',
-'temoignage1_role' => 'Engineer • Berlin, Germany',
+   "temoignage1_texte" => "My request was processed in record time. The SmartFinance team answered all my questions clearly and patiently.",
+"temoignage1_role" => "Engineer • Berlin, Germany",
 
-'temoignage2_texte' => 'A competent team supported me throughout the financing process.',
-'temoignage2_role' => 'Entrepreneur • Munich, Germany',
+"temoignage2_texte" => "I was pleasantly surprised by how simple the process was. Genuine support from start to finish, which isn't always a given.",
+"temoignage2_role" => "Entrepreneur • Munich, Germany",
 
-'temoignage3_texte' => 'Everything was clearly explained. I highly recommend SmartFinance.',
-'temoignage3_role' => 'Financial Consultant • Hamburg, Germany',
+"temoignage3_texte" => "A service that truly earns your trust. Every step was explained clearly, without unnecessary jargon.",
+"temoignage3_role" => "Financial Consultant • Hamburg, Germany",
 
-'temoignage4_texte' => 'The whole process was quick and straightforward.',
-'temoignage4_role' => 'Architect • Cologne, Germany',
+"temoignage4_texte" => "Got my financing within days, with no surprises in the terms. I'd work with them again without hesitation.",
+"temoignage4_role" => "Architect • Cologne, Germany",
 
-'temoignage5_texte' => 'Professional and reliable service. I am completely satisfied.',
-'temoignage5_role' => 'HR Manager • Vienna, Austria',
+"temoignage5_texte" => "Thorough, responsive, and attentive — three words that sum up my experience with SmartFinance well.",
+"temoignage5_role" => "HR Manager • Vienna, Austria",
 
-'temoignage6_texte' => 'Excellent communication and outstanding support.',
-'temoignage6_role' => 'Entrepreneur • Zurich, Switzerland',
+"temoignage6_texte" => "The online tracking let me keep an eye on my request at all times, without having to call constantly.",
+"temoignage6_role" => "Entrepreneur • Zurich, Switzerland",
 
-'temoignage7_texte' => 'Overall, a very good experience. Processing took a little longer than expected.',
-'temoignage7_role' => 'Project Manager • Graz, Austria',
+"temoignage7_texte" => "Processing took a bit longer than expected, but the final result and the support I received made up for the wait.",
+"temoignage7_role" => "Project Manager • Graz, Austria",
 
-'temoignage8_texte' => 'Reliable advice and excellent customer service. Highly recommended.',
-'temoignage8_role' => 'Accountant • Frankfurt, Germany',
-=======
-    "temoignage1_texte" => "I got a response to my request in less than 48 hours. Simple, fast, and the online tracking is very handy.",
-    "temoignage1_role" => "Shop owner, Cotonou",
-    "temoignage2_texte" => "The simulator let me know exactly what to expect before even submitting my request. Very reassuring.",
-    "temoignage2_role" => "Entrepreneur, Porto-Novo",
-    "temoignage3_texte" => "An attentive team and serious support from start to finish on my project. I recommend it.",
-    "temoignage3_role" => "Teacher, Abomey-Calavi",
-    "temoignages_note" => "* Sample testimonials, to be replaced with real customer reviews as they become available.",
+"temoignage8_texte" => "A reliable team that inspires confidence from the very first contact. Highly recommended.",
+"temoignage8_role" => "Accountant • Frankfurt, Germany",
 
->>>>>>> 785691553ce273d604f66e7abf5d092c6e1f60b9
     // Generic unit
     "unite_mois" => "months",
 

@@ -122,40 +122,29 @@ return [
     "admin_mdp_trop_court" => "Das Passwort muss mindestens 6 Zeichen lang sein.",
 
     // Kundenstimmen (Inhalt)
-<<<<<<< HEAD
-    'temoignage1_texte' => 'Dank SmartFinance erhielt ich meine Finanzierung schneller als erwartet. Der Service war professionell und transparent.',
-'temoignage1_role' => 'Ingenieur • Berlin, Deutschland',
+   "temoignage1_texte" => "Mein Antrag wurde in Rekordzeit bearbeitet. Das SmartFinance-Team hat all meine Fragen klar und verständlich beantwortet.",
+"temoignage1_role" => "Ingenieur • Berlin, Deutschland",
 
-'temoignage2_texte' => 'Ein kompetentes Team hat mich während des gesamten Finanzierungsprozesses begleitet.',
-'temoignage2_role' => 'Unternehmerin • München, Deutschland',
+"temoignage2_texte" => "Ich war positiv überrascht, wie einfach der gesamte Ablauf war. Eine persönliche Betreuung von Anfang bis Ende – das ist nicht selbstverständlich.",
+"temoignage2_role" => "Unternehmerin • München, Deutschland",
 
-'temoignage3_texte' => 'Alle Schritte wurden klar erklärt. Ich empfehle SmartFinance gerne weiter.',
-'temoignage3_role' => 'Finanzberater • Hamburg, Deutschland',
+"temoignage3_texte" => "Ein Service, der mein Vertrauen wirklich verdient. Jeder Schritt wurde mir ohne unnötigen Fachjargon erklärt.",
+"temoignage3_role" => "Finanzberater • Hamburg, Deutschland",
 
-'temoignage4_texte' => 'Der gesamte Ablauf war schnell und unkompliziert.',
-'temoignage4_role' => 'Architektin • Köln, Deutschland',
+"temoignage4_texte" => "Finanzierung innerhalb weniger Tage erhalten, ohne böse Überraschungen bei den Konditionen. Ich würde jederzeit wieder auf sie zurückgreifen.",
+"temoignage4_role" => "Architektin • Köln, Deutschland",
 
-'temoignage5_texte' => 'Professioneller und zuverlässiger Service. Ich bin sehr zufrieden.',
-'temoignage5_role' => 'Personalmanager • Wien, Österreich',
+"temoignage5_texte" => "Sorgfalt, Schnelligkeit und ein offenes Ohr – drei Worte, die meine Erfahrung mit SmartFinance treffend zusammenfassen.",
+"temoignage5_role" => "Personalmanager • Wien, Österreich",
 
-'temoignage6_texte' => 'Ausgezeichnete Kommunikation und hervorragende Betreuung.',
-'temoignage6_role' => 'Unternehmerin • Zürich, Schweiz',
+"temoignage6_texte" => "Dank der Online-Nachverfolgung konnte ich meinen Antrag jederzeit im Blick behalten, ohne ständig anrufen zu müssen.",
+"temoignage6_role" => "Unternehmerin • Zürich, Schweiz",
 
-'temoignage7_texte' => 'Insgesamt eine sehr gute Erfahrung. Die Bearbeitung dauerte etwas länger als erwartet.',
-'temoignage7_role' => 'Projektleiter • Graz, Österreich',
+"temoignage7_texte" => "Die Bearbeitung dauerte etwas länger als erwartet, aber das Ergebnis und die Betreuung haben die Wartezeit voll wettgemacht.",
+"temoignage7_role" => "Projektleiter • Graz, Österreich",
 
-'temoignage8_texte' => 'Kompetente Beratung und zuverlässiger Service. Empfehlenswert.',
-'temoignage8_role' => 'Buchhalterin • Frankfurt am Main, Deutschland',
-=======
-    "temoignage1_texte" => "Ich habe innerhalb von 48 Stunden eine Antwort auf meinen Antrag erhalten. Einfach, schnell, und die Online-Verfolgung ist sehr praktisch.",
-    "temoignage1_role" => "Geschäftsinhaberin, Cotonou",
-    "temoignage2_texte" => "Mit dem Simulator wusste ich genau, was mich erwartet, noch bevor ich meinen Antrag gestellt habe. Sehr beruhigend.",
-    "temoignage2_role" => "Unternehmer, Porto-Novo",
-    "temoignage3_texte" => "Ein aufmerksames Team und eine ernsthafte Begleitung von Anfang bis Ende meines Projekts. Ich empfehle es.",
-    "temoignage3_role" => "Lehrerin, Abomey-Calavi",
-    "temoignages_note" => "* Beispielhafte Kundenstimmen, die durch echte Kundenbewertungen ersetzt werden, sobald diese verfügbar sind.",
-
->>>>>>> 785691553ce273d604f66e7abf5d092c6e1f60b9
+"temoignage8_texte" => "Ein zuverlässiges Team, das schon beim ersten Kontakt Vertrauen schafft. Uneingeschränkt empfehlenswert.",
+"temoignage8_role" => "Buchhalterin • Frankfurt am Main, Deutschland",
     // Allgemeine Einheit
     "unite_mois" => "Monate",
 

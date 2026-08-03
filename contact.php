@@ -16,21 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $success = t('contact_succes');
 
     notifierProprietaire(
-<<<<<<< HEAD
         "Nouveau message de contact - " . $sujet,
         "<h3>Nouveau message reçu</h3>
         <p><strong>De :</strong> " . e($nom) . " (" . e($email) . ")</p>
         <p><strong>Sujet :</strong> " . e($sujet) . "</p>
         <p><strong>Message :</strong><br>" . nl2br(e($contenu)) . "</p>"
     );
-=======
-    "Nouveau message de contact - " . html_entity_decode($sujet),
-    "<h3>Nouveau message reçu</h3>
-    <p><strong>De :</strong> " . $nom . " (" . $email . ")</p>
-    <p><strong>Sujet :</strong> " . $sujet . "</p>
-    <p><strong>Message :</strong><br>" . nl2br($contenu) . "</p>"
-);
->>>>>>> 785691553ce273d604f66e7abf5d092c6e1f60b9
 }
 
 require_once __DIR__ . '/includes/header.php';

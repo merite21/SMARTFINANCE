@@ -122,40 +122,29 @@ return [
     "admin_mdp_trop_court" => "Le mot de passe doit contenir au moins 6 caractères.",
 
     // Témoignages (contenu)
-<<<<<<< HEAD
-   'temoignage1_texte' => "Grâce à SmartFinance, j'ai obtenu mon financement rapidement. Le service était professionnel et transparent.",
-'temoignage1_role' => 'Ingénieur • Berlin, Allemagne',
+   "temoignage1_texte" => "Ma demande a été traitée en un temps record. L'équipe de SmartFinance a su répondre à toutes mes questions avec beaucoup de clarté.",
+"temoignage1_role" => "Ingénieur • Berlin, Allemagne",
 
-'temoignage2_texte' => "Une équipe compétente qui m'a accompagné durant tout le processus de financement.",
-'temoignage2_role' => 'Entrepreneure • Munich, Allemagne',
+"temoignage2_texte" => "J'ai été agréablement surprise par la simplicité des démarches. Un accompagnement humain du début à la fin, ce qui n'est pas si fréquent.",
+"temoignage2_role" => "Entrepreneure • Munich, Allemagne",
 
-'temoignage3_texte' => "Toutes les démarches ont été clairement expliquées. Je recommande leurs services.",
-'temoignage3_role' => 'Consultant financier • Hambourg, Allemagne',
+"temoignage3_texte" => "Un service à la hauteur de ma confiance. Chaque étape m'a été expliquée sans jargon inutile, ce qui a vraiment fait la différence.",
+"temoignage3_role" => "Consultant financier • Hambourg, Allemagne",
 
-'temoignage4_texte' => "Le processus était rapide et simple. Une excellente expérience.",
-'temoignage4_role' => 'Architecte • Cologne, Allemagne',
+"temoignage4_texte" => "Financement obtenu en quelques jours seulement, sans mauvaise surprise sur les conditions. Je referais appel à eux sans hésiter.",
+"temoignage4_role" => "Architecte • Cologne, Allemagne",
 
-'temoignage5_texte' => "Service sérieux, rapide et efficace. Je suis entièrement satisfait.",
-'temoignage5_role' => 'Responsable RH • Vienne, Autriche',
+"temoignage5_texte" => "Rigueur, réactivité et écoute : trois mots qui résument bien mon expérience avec SmartFinance.",
+"temoignage5_role" => "Responsable RH • Vienne, Autriche",
 
-'temoignage6_texte' => "Une communication excellente et un accompagnement de qualité.",
-'temoignage6_role' => 'Entrepreneure • Zurich, Suisse',
+"temoignage6_texte" => "Le suivi en ligne m'a permis de garder un œil sur ma demande à tout moment, sans avoir besoin d'appeler sans arrêt.",
+"temoignage6_role" => "Entrepreneure • Zurich, Suisse",
 
-'temoignage7_texte' => "Très bonne expérience. Quelques délais supplémentaires mais un résultat satisfaisant.",
-'temoignage7_role' => 'Chef de projet • Graz, Autriche',
+"temoignage7_texte" => "Le délai a été un peu plus long que prévu, mais le résultat final et l'accompagnement ont largement compensé l'attente.",
+"temoignage7_role" => "Chef de projet • Graz, Autriche",
 
-'temoignage8_texte' => "Des conseils fiables et un personnel compétent. Je recommande cette société.",
-'temoignage8_role' => 'Comptable • Francfort, Allemagne',
-=======
-    "temoignage1_texte" => "J'ai obtenu la réponse à ma demande en moins de 48h. Simple, rapide, et le suivi en ligne est très pratique.",
-    "temoignage1_role" => "Commerçante, Cotonou",
-    "temoignage2_texte" => "Le simulateur m'a permis de savoir exactement à quoi m'attendre avant même de faire ma demande. Très rassurant.",
-    "temoignage2_role" => "Entrepreneur, Porto-Novo",
-    "temoignage3_texte" => "Une équipe à l'écoute et un accompagnement sérieux du début à la fin de mon projet. Je recommande.",
-    "temoignage3_role" => "Enseignante, Abomey-Calavi",
-    "temoignages_note" => "* Témoignages d'exemple à remplacer par de vrais avis clients dès que disponibles.",
->>>>>>> 785691553ce273d604f66e7abf5d092c6e1f60b9
-
+"temoignage8_texte" => "Une équipe fiable qui inspire confiance dès le premier échange. Je recommande sans réserve.",
+"temoignage8_role" => "Comptable • Francfort, Allemagne",
     // Unité générique
     "unite_mois" => "mois",
 

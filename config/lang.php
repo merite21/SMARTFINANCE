@@ -6,8 +6,8 @@
 |--------------------------------------------------------------------------
 | N'importe quel visiteur, de n'importe quel pays, peut choisir sa langue
 | via le sélecteur dans la navbar. Le choix est mémorisé en session, avec
-| une détection automatique de la langue du navigateur pour un premier
-| visiteur qui n'a encore rien choisi.
+| l'allemand comme langue par défaut pour un premier visiteur qui n'a
+| encore rien choisi.
 */
 
 define("LANGUES_DISPONIBLES", [
@@ -18,18 +18,7 @@ define("LANGUES_DISPONIBLES", [
 ]);
 
 if (!isset($_SESSION['lang'])) {
-<<<<<<< HEAD
     $_SESSION['lang'] = 'de';
-=======
-
-    // Détection automatique via la langue du navigateur (Accept-Language)
-    $langueNavigateur = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? 'fr', 0, 2);
-
-    $_SESSION['lang'] = array_key_exists($langueNavigateur, LANGUES_DISPONIBLES)
-        ? $langueNavigateur
-        : 'fr';
-
->>>>>>> 785691553ce273d604f66e7abf5d092c6e1f60b9
 }
 
 $GLOBALS['__traductions'] = require __DIR__ . "/../lang/" . $_SESSION['lang'] . ".php";

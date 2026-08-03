@@ -4,6 +4,10 @@ require_once "config/fonctions.php";
 require_once "includes/header.php";
 ?>
 
+
+
+
+
 <section class="hero">
     <div class="container">
         <div class="row align-items-center">
@@ -34,149 +38,46 @@ require_once "includes/header.php";
     </div>
 </section>
 
+
+<section class="container py-5">
+
+    <div class="text-center mb-5">
+        <h2>Nos solutions de financement</h2>
+        <p class="text-muted">Des services adaptés à tous vos besoins</p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <img src="<?= SITE_URL ?>assets/img/hero-cheque1.png"
+                 alt="Chèque de financement"
+                 class="img-fluid rounded shadow-sm w-100"
+                 style="height: 280px; object-fit: cover;">
+        </div>
+
+        <div class="col-md-4">
+            <img src="<?= SITE_URL ?>assets/img/hero-cheque.png"
+                 alt="Prêt d'argent"
+                 class="img-fluid rounded shadow-sm w-100"
+                 style="height: 280px; object-fit: cover;">
+        </div>
+
+        <div class="col-md-4">
+            <img src="<?= SITE_URL ?>assets/img/images.png"
+                 alt="Conseiller au bureau"
+                 class="img-fluid rounded shadow-sm w-100"
+                 style="height: 280px; object-fit: cover;">
+        </div>
+
+    </div>
+
+</section>
+
+
+
 <section class="container py-5">
     <div class="row g-4">
 
-<<<<<<< HEAD
-    <!-- Témoignage 1 -->
-    <div class="col-md-4">
-        <div class="card shadow-sm p-4 h-100 testimonial-card">
-            <div class="mb-3 text-warning">★★★★★</div>
-            <p class="fst-italic">
-                « <?= t('temoignage1_texte') ?> »
-            </p>
-            <div class="d-flex align-items-center mt-3">
-                <div class="testimonial-avatar">LS</div>
-                <div class="ms-3">
-                    <div class="fw-bold">Lukas Schneider</div>
-                    <div class="text-muted small"><?= t('temoignage1_role') ?></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Témoignage 2 -->
-    <div class="col-md-4">
-        <div class="card shadow-sm p-4 h-100 testimonial-card">
-            <div class="mb-3 text-warning">★★★★★</div>
-            <p class="fst-italic">
-                « <?= t('temoignage2_texte') ?> »
-            </p>
-            <div class="d-flex align-items-center mt-3">
-                <div class="testimonial-avatar">AM</div>
-                <div class="ms-3">
-                    <div class="fw-bold">Anna Müller</div>
-                    <div class="text-muted small"><?= t('temoignage2_role') ?></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Témoignage 3 -->
-    <div class="col-md-4">
-        <div class="card shadow-sm p-4 h-100 testimonial-card">
-            <div class="mb-3 text-warning">★★★★★</div>
-            <p class="fst-italic">
-                « <?= t('temoignage3_texte') ?> »
-            </p>
-            <div class="d-flex align-items-center mt-3">
-                <div class="testimonial-avatar">MW</div>
-                <div class="ms-3">
-                    <div class="fw-bold">Michael Weber</div>
-                    <div class="text-muted small"><?= t('temoignage3_role') ?></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Témoignage 4 -->
-    <div class="col-md-4">
-        <div class="card shadow-sm p-4 h-100 testimonial-card">
-            <div class="mb-3 text-warning">★★★★★</div>
-            <p class="fst-italic">
-                « <?= t('temoignage4_texte') ?> »
-            </p>
-            <div class="d-flex align-items-center mt-3">
-                <div class="testimonial-avatar">SF</div>
-                <div class="ms-3">
-                    <div class="fw-bold">Sophie Fischer</div>
-                    <div class="text-muted small"><?= t('temoignage4_role') ?></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Témoignage 5 -->
-    <div class="col-md-4">
-        <div class="card shadow-sm p-4 h-100 testimonial-card">
-            <div class="mb-3 text-warning">★★★★★</div>
-            <p class="fst-italic">
-                « <?= t('temoignage5_texte') ?> »
-            </p>
-            <div class="d-flex align-items-center mt-3">
-                <div class="testimonial-avatar">TB</div>
-                <div class="ms-3">
-                    <div class="fw-bold">Thomas Becker</div>
-                    <div class="text-muted small"><?= t('temoignage5_role') ?></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Témoignage 6 -->
-    <div class="col-md-4">
-        <div class="card shadow-sm p-4 h-100 testimonial-card">
-            <div class="mb-3 text-warning">★★★★★</div>
-            <p class="fst-italic">
-                « <?= t('temoignage6_texte') ?> »
-            </p>
-            <div class="d-flex align-items-center mt-3">
-                <div class="testimonial-avatar">JH</div>
-                <div class="ms-3">
-                    <div class="fw-bold">Julia Hoffmann</div>
-                    <div class="text-muted small"><?= t('temoignage6_role') ?></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Témoignage 7 -->
-    <div class="col-md-4">
-        <div class="card shadow-sm p-4 h-100 testimonial-card">
-            <div class="mb-3 text-warning">★★★★☆</div>
-            <p class="fst-italic">
-                « <?= t('temoignage7_texte') ?> »
-            </p>
-            <div class="d-flex align-items-center mt-3">
-                <div class="testimonial-avatar">DW</div>
-                <div class="ms-3">
-                    <div class="fw-bold">Daniel Wagner</div>
-                    <div class="text-muted small"><?= t('temoignage7_role') ?></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Témoignage 8 -->
-    <div class="col-md-4">
-        <div class="card shadow-sm p-4 h-100 testimonial-card">
-            <div class="mb-3 text-warning">★★★★☆</div>
-            <p class="fst-italic">
-                « <?= t('temoignage8_texte') ?> »
-            </p>
-            <div class="d-flex align-items-center mt-3">
-                <div class="testimonial-avatar">LK</div>
-                <div class="ms-3">
-                    <div class="fw-bold">Laura König</div>
-                    <div class="text-muted small"><?= t('temoignage8_role') ?></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-=======
         <div class="col-md-4">
             <div class="card shadow-sm p-4 h-100">
                 <div class="feature-icon"><i class="fas fa-calculator"></i></div>
@@ -211,8 +112,12 @@ require_once "includes/header.php";
         <p class="text-muted"><?= t('temoignages_soustitre') ?></p>
     </div>
 
+
+
+    
     <div class="row g-4">
 
+        <!-- Témoignage 1 -->
         <div class="col-md-4">
             <div class="card shadow-sm p-4 h-100 testimonial-card">
                 <div class="mb-3 text-warning">★★★★★</div>
@@ -220,15 +125,16 @@ require_once "includes/header.php";
                     « <?= t('temoignage1_texte') ?> »
                 </p>
                 <div class="d-flex align-items-center mt-3">
-                    <div class="testimonial-avatar">AK</div>
+                    <div class="testimonial-avatar">LS</div>
                     <div class="ms-3">
-                        <div class="fw-bold">Aïcha K.</div>
+                        <div class="fw-bold">Lukas Schneider</div>
                         <div class="text-muted small"><?= t('temoignage1_role') ?></div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Témoignage 2 -->
         <div class="col-md-4">
             <div class="card shadow-sm p-4 h-100 testimonial-card">
                 <div class="mb-3 text-warning">★★★★★</div>
@@ -236,15 +142,16 @@ require_once "includes/header.php";
                     « <?= t('temoignage2_texte') ?> »
                 </p>
                 <div class="d-flex align-items-center mt-3">
-                    <div class="testimonial-avatar">MT</div>
+                    <div class="testimonial-avatar">AM</div>
                     <div class="ms-3">
-                        <div class="fw-bold">Marius T.</div>
+                        <div class="fw-bold">Anna Müller</div>
                         <div class="text-muted small"><?= t('temoignage2_role') ?></div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Témoignage 3 -->
         <div class="col-md-4">
             <div class="card shadow-sm p-4 h-100 testimonial-card">
                 <div class="mb-3 text-warning">★★★★★</div>
@@ -252,21 +159,101 @@ require_once "includes/header.php";
                     « <?= t('temoignage3_texte') ?> »
                 </p>
                 <div class="d-flex align-items-center mt-3">
-                    <div class="testimonial-avatar">SL</div>
+                    <div class="testimonial-avatar">MW</div>
                     <div class="ms-3">
-                        <div class="fw-bold">Sandrine L.</div>
+                        <div class="fw-bold">Michael Weber</div>
                         <div class="text-muted small"><?= t('temoignage3_role') ?></div>
                     </div>
                 </div>
             </div>
         </div>
 
-    </div>
+        <!-- Témoignage 4 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100 testimonial-card">
+                <div class="mb-3 text-warning">★★★★★</div>
+                <p class="fst-italic">
+                    « <?= t('temoignage4_texte') ?> »
+                </p>
+                <div class="d-flex align-items-center mt-3">
+                    <div class="testimonial-avatar">SF</div>
+                    <div class="ms-3">
+                        <div class="fw-bold">Sophie Fischer</div>
+                        <div class="text-muted small"><?= t('temoignage4_role') ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
->>>>>>> 785691553ce273d604f66e7abf5d092c6e1f60b9
-    <p class="text-center text-muted small mt-4">
-        <?= t('temoignages_note') ?>
-    </p>
+        <!-- Témoignage 5 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100 testimonial-card">
+                <div class="mb-3 text-warning">★★★★★</div>
+                <p class="fst-italic">
+                    « <?= t('temoignage5_texte') ?> »
+                </p>
+                <div class="d-flex align-items-center mt-3">
+                    <div class="testimonial-avatar">TB</div>
+                    <div class="ms-3">
+                        <div class="fw-bold">Thomas Becker</div>
+                        <div class="text-muted small"><?= t('temoignage5_role') ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Témoignage 6 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100 testimonial-card">
+                <div class="mb-3 text-warning">★★★★★</div>
+                <p class="fst-italic">
+                    « <?= t('temoignage6_texte') ?> »
+                </p>
+                <div class="d-flex align-items-center mt-3">
+                    <div class="testimonial-avatar">JH</div>
+                    <div class="ms-3">
+                        <div class="fw-bold">Julia Hoffmann</div>
+                        <div class="text-muted small"><?= t('temoignage6_role') ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Témoignage 7 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100 testimonial-card">
+                <div class="mb-3 text-warning">★★★★☆</div>
+                <p class="fst-italic">
+                    « <?= t('temoignage7_texte') ?> »
+                </p>
+                <div class="d-flex align-items-center mt-3">
+                    <div class="testimonial-avatar">DW</div>
+                    <div class="ms-3">
+                        <div class="fw-bold">Daniel Wagner</div>
+                        <div class="text-muted small"><?= t('temoignage7_role') ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Témoignage 8 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 h-100 testimonial-card">
+                <div class="mb-3 text-warning">★★★★☆</div>
+                <p class="fst-italic">
+                    « <?= t('temoignage8_texte') ?> »
+                </p>
+                <div class="d-flex align-items-center mt-3">
+                    <div class="testimonial-avatar">LK</div>
+                    <div class="ms-3">
+                        <div class="fw-bold">Laura König</div>
+                        <div class="text-muted small"><?= t('temoignage8_role') ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </section>
 

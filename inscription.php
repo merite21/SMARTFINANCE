@@ -73,14 +73,14 @@ if(isset($_POST['inscription'])){
         $_SESSION['user'] = $nouvelUtilisateur->fetch();
 
         notifierProprietaire(
-<<<<<<< HEAD
+
             "Nouvelle inscription sur SmartFinance",
             "<h3>Nouveau compte créé</h3>
             <p><strong>Nom :</strong> " . e($nom) . " " . e($prenom) . "</p>
             <p><strong>Email :</strong> " . e($email) . "</p>
             <p><strong>Téléphone :</strong> " . e($telephone) . "</p>"
         );
-=======
+
     "Nouvelle inscription sur SmartFinance",
     "<h3>Nouveau compte créé</h3>
     <p><strong>Nom :</strong> " . $nom . " " . $prenom . "</p>
