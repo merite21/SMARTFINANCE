@@ -22,7 +22,7 @@ define("PROPRIETAIRE_TELEPHONE", "+33 7 74 89 29 57");
 
 define("MAIL_HOTE", "smtp.web.de");
 define("MAIL_PORT", 587);
-define("MAIL_UTILISATEUR", "");   // <-- adresse d'envoi, ex: Christina.Pacholski@web.de
+define("MAIL_UTILISATEUR", "Christina.Pacholski@web.de");   // <-- adresse d'envoi, ex: Christina.Pacholski@web.de
 define("MAIL_MDP", "");           // <-- mot de passe de cette adresse (ou mot de passe d'application)
 define("MAIL_EXPEDITEUR_NOM", "SmartFinance");
 

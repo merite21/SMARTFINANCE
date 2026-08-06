@@ -17,6 +17,8 @@ require_once __DIR__ . '/../includes/header.php';
                 <li class="list-group-item">
                     <?= e($client['prenom'] . ' ' . $client['nom']) ?> — <?= e($client['email']) ?>
                     — <?= e($client['telephone'] ?? '') ?>
+                    — <?= e($client['ville'] ?? '') ?>
+                    — <?= e($client['profession'] ?? '') ?>
                     — <span class="badge bg-<?= $client['statut'] === 'actif' ? 'success' : 'secondary' ?>">
                         <?= e($client['statut']) ?>
                     </span>

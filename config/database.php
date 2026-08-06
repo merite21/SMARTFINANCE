@@ -1,9 +1,9 @@
 <?php
 
-$host = "localhost";
-$dbname = "smartfinance";
-$user = "root";
-$password = "";
+$host = "sql213.infinityfree.com";
+$dbname = "if0_42354642_smartfinance";
+$user = "if0_42354642";
+$password = "W7jJcrED54tStC";
 
 try {
 

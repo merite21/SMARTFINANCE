@@ -14,7 +14,7 @@ define("SITE_NAME", "SMARTFINANCE");
 
 define(
     "SITE_URL",
-    "http://localhost/SMARTFINANCE/"
+    "https://smartfinance1.infinityfreeapp.com/"
 );
 
 date_default_timezone_set("Africa/Porto-Novo");

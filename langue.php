@@ -3,7 +3,7 @@
 require_once "config/config.php";
 require_once "config/fonctions.php";
 
-$langueDemandee = $_GET['lang'] ?? 'fr';
+$langueDemandee = $_GET['lang'] ?? 'de';
 
 if (array_key_exists($langueDemandee, LANGUES_DISPONIBLES)) {
     $_SESSION['lang'] = $langueDemandee;

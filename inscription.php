@@ -10,11 +10,21 @@ $message = "";
 
 if(isset($_POST['inscription'])){
 
+verifier_csrf();
 
-    $nom = securiser($_POST['nom']);
-    $prenom = securiser($_POST['prenom']);
-    $email = securiser($_POST['email']);
-    $telephone = securiser($_POST['telephone']);
+$nom = securiser($_POST['nom']);
+$prenom = securiser($_POST['prenom']);
+$email = securiser($_POST['email']);
+$telephone = securiser($_POST['telephone']);
+
+$date_naissance = $_POST['date_naissance'];
+$sexe = securiser($_POST['sexe']);
+$adresse = securiser($_POST['adresse']);
+$ville = securiser($_POST['ville']);
+$pays = securiser($_POST['pays']);
+$profession = securiser($_POST['profession']);
+$employeur = securiser($_POST['employeur']);
+$revenu = $_POST['revenu'];
 
 
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -28,6 +38,7 @@ if(isset($_POST['inscription'])){
     }else{
 
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
 
 
 
@@ -49,46 +60,58 @@ if(isset($_POST['inscription'])){
     }else{
 
 
-        $req = $pdo->prepare(
+        $req = $pdo->prepare("
+INSERT INTO utilisateurs
+(
+nom,
+prenom,
+email,
+telephone,
+date_naissance,
+sexe,
+adresse,
+ville,
+pays,
+profession,
+employeur,
+revenu,
+mot_de_passe
+)
+VALUES
+(?,?,?,?,?,?,?,?,?,?,?,?,?)
+");
+        
+$req->execute([
+    $nom,
+    $prenom,
+    $email,
+    $telephone,
+    $date_naissance,
+    $sexe,
+    $adresse,
+    $ville,
+    $pays,
+    $profession,
+    $employeur,
+    $revenu,
+    $password
+]);
 
-            "INSERT INTO utilisateurs
-            (nom,prenom,email,telephone,mot_de_passe)
-            VALUES (?,?,?,?,?)"
 
-        );
-
-
-        $req->execute([
-            $nom,
-            $prenom,
-            $email,
-            $telephone,
-            $password
-        ]);
-
-
-        // Connexion automatique + redirection vers le tableau de bord
         $nouvelUtilisateur = $pdo->prepare("SELECT * FROM utilisateurs WHERE email = ?");
         $nouvelUtilisateur->execute([$email]);
-        $_SESSION['user'] = $nouvelUtilisateur->fetch();
+        $user = $nouvelUtilisateur->fetch();
 
-        notifierProprietaire(
-
-            "Nouvelle inscription sur SmartFinance",
-            "<h3>Nouveau compte créé</h3>
-            <p><strong>Nom :</strong> " . e($nom) . " " . e($prenom) . "</p>
-            <p><strong>Email :</strong> " . e($email) . "</p>
-            <p><strong>Téléphone :</strong> " . e($telephone) . "</p>"
-        );
-
+       notifierProprietaire(
     "Nouvelle inscription sur SmartFinance",
     "<h3>Nouveau compte créé</h3>
-    <p><strong>Nom :</strong> " . $nom . " " . $prenom . "</p>
-    <p><strong>Email :</strong> " . $email . "</p>
-    <p><strong>Téléphone :</strong> " . $telephone . "</p>"
-); 
->>>>>>> 785691553ce273d604f66e7abf5d092c6e1f60b9
+    <p><strong>Nom :</strong> " . e($nom) . " " . e($prenom) . "</p>
+    <p><strong>Email :</strong> " . e($email) . "</p>
+    <p><strong>Téléphone :</strong> " . e($telephone) . "</p>"
+);
 
+        // Connexion automatique + redirection vers le tableau de bord
+        $_SESSION['user'] = $user;
         redirect("dashboard.php");
 
 
@@ -120,7 +143,11 @@ if(isset($_POST['inscription'])){
             </div>
         <?php endif; ?>
 
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
+            <?= csrf_field() ?>
+            <h5 class="mt-4 mb-3 text-primary">
+    <i class="fas fa-user"></i> <?= t('inscription_infos_perso') ?>
+</h5>
 
             <input
             class="form-control mb-3"
@@ -148,6 +175,79 @@ if(isset($_POST['inscription'])){
             type="text"
             name="telephone"
             placeholder="<?= t('inscription_telephone') ?>">
+            
+            <input
+class="form-control mb-3"
+type="date"
+name="date_naissance"
+required>
+
+<select
+class="form-control mb-3"
+name="sexe"
+required>
+    <option value=""><?= t('inscription_sexe_choisir') ?></option>
+    <option value="Homme"><?= t('inscription_sexe_homme') ?></option>
+    <option value="Femme"><?= t('inscription_sexe_femme') ?></option>
+</select>
+
+<h5 class="mt-4 mb-3 text-primary">
+    <i class="fas fa-location-dot"></i> <?= t('inscription_adresse_titre') ?>
+</h5>
+<input
+class="form-control mb-3"
+type="text"
+name="adresse"
+placeholder="<?= t('inscription_adresse') ?>"
+required>
+
+<input
+class="form-control mb-3"
+type="text"
+name="ville"
+placeholder="<?= t('inscription_ville') ?>"
+required>
+
+<input
+class="form-control mb-3"
+type="text"
+name="pays"
+placeholder="<?= t('inscription_pays') ?>"
+required>
+        
+<h5 class="mt-4 mb-3 text-primary">
+    <i class="fas fa-briefcase"></i> <?= t('inscription_pro_titre') ?>
+</h5>
+<select
+class="form-control mb-3"
+name="profession"
+id="profession"
+required>
+
+    <option value=""><?= t('inscription_profession_choisir') ?></option>
+    <option value="Salarié"><?= t('inscription_profession_salarie') ?></option>
+    <option value="Fonctionnaire"><?= t('inscription_profession_fonctionnaire') ?></option>
+    <option value="Indépendant"><?= t('inscription_profession_independant') ?></option>
+    <option value="Commerçant"><?= t('inscription_profession_commercant') ?></option>
+    <option value="Étudiant"><?= t('inscription_profession_etudiant') ?></option>
+    <option value="Sans emploi"><?= t('inscription_profession_sans_emploi') ?></option>
+    <option value="Retraité"><?= t('inscription_profession_retraite') ?></option>
+
+</select>
+            
+<input
+class="form-control mb-3"
+type="text"
+name="employeur"
+id="employeur"
+placeholder="<?= t('inscription_employeur') ?>">
+
+<input
+class="form-control mb-3"
+type="number"
+name="revenu"
+placeholder="<?= t('inscription_revenu') ?>"
+required>
 
             <input
             class="form-control mb-3"
@@ -172,5 +272,32 @@ if(isset($_POST['inscription'])){
 
     </div>
 </div>
+<script>
 
+const profession = document.getElementById("profession");
+const employeur = document.getElementById("employeur");
+
+function verifierEmployeur(){
+
+    if(
+        profession.value === "Salarié" ||
+        profession.value === "Fonctionnaire" ||
+        profession.value === "Indépendant" ||
+        profession.value === "Commerçant"
+    ){
+        employeur.style.display = "block";
+        employeur.required = true;
+    }else{
+        employeur.style.display = "none";
+        employeur.required = false;
+        employeur.value = "";
+    }
+
+}
+
+profession.addEventListener("change", verifierEmployeur);
+
+verifierEmployeur();
+
+</script>
 <?php require_once "includes/footer.php"; ?>

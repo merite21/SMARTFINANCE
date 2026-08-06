@@ -42,29 +42,29 @@ require_once "includes/header.php";
 <section class="container py-5">
 
     <div class="text-center mb-5">
-        <h2>Nos solutions de financement</h2>
-        <p class="text-muted">Des services adaptés à tous vos besoins</p>
-    </div>
+    <h2><?= t('solutions_titre') ?></h2>
+    <p class="text-muted"><?= t('solutions_soustitre') ?></p>
+</div>
 
     <div class="row g-4">
 
         <div class="col-md-4">
             <img src="<?= SITE_URL ?>assets/img/hero-cheque1.png"
-                 alt="Chèque de financement"
+                alt="<?= t('alt_cheque1') ?>"
                  class="img-fluid rounded shadow-sm w-100"
                  style="height: 280px; object-fit: cover;">
         </div>
 
         <div class="col-md-4">
             <img src="<?= SITE_URL ?>assets/img/hero-cheque.png"
-                 alt="Prêt d'argent"
+                 alt="<?= t('alt_cheque2') ?>"
                  class="img-fluid rounded shadow-sm w-100"
                  style="height: 280px; object-fit: cover;">
         </div>
 
         <div class="col-md-4">
             <img src="<?= SITE_URL ?>assets/img/images.png"
-                 alt="Conseiller au bureau"
+                 alt="<?= t('alt_conseiller') ?>"
                  class="img-fluid rounded shadow-sm w-100"
                  style="height: 280px; object-fit: cover;">
         </div>

@@ -2,6 +2,7 @@
 
 require_once "config/config.php";
 require_once "config/fonctions.php";
+require_once "config/mail.php";
 
 
 $message="";
@@ -9,6 +10,7 @@ $message="";
 
 if(isset($_POST['connexion'])){
 
+verifier_csrf();
 
 $email = securiser($_POST['email']);
 
@@ -39,25 +41,17 @@ if(isset($user['statut']) && $user['statut'] === 'inactif'){
 
 }else{
 
-
 $_SESSION['user'] = $user;
-
-
 
 if($user['role']=="admin"){
 
-
-header("Location: admin/index.php");
-
+    header("Location: admin/index.php");
 
 }else{
 
-
-header("Location: dashboard.php");
-
+    header("Location: dashboard.php");
 
 }
-
 
 exit;
 
@@ -94,6 +88,8 @@ $message="Email ou mot de passe incorrect";
         <?php endif; ?>
 
         <form method="POST">
+
+            <?= csrf_field() ?>
 
             <input
             class="form-control mb-3"

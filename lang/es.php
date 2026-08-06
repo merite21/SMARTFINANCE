@@ -44,6 +44,35 @@ return [
     "inscription_deja_compte" => "¿Ya tienes una cuenta?",
     "inscription_se_connecter" => "Iniciar sesión",
 
+    "inscription_infos_perso" => "Información personal",
+    "inscription_date_naissance" => "Fecha de nacimiento",
+    "inscription_sexe_choisir" => "Seleccione su sexo",
+    "inscription_sexe_homme" => "Hombre",
+    "inscription_sexe_femme" => "Mujer",
+    "inscription_adresse_titre" => "Dirección",
+    "inscription_adresse" => "Barrio, calle, número de casa",
+    "inscription_ville" => "Ciudad",
+    "inscription_pays" => "País",
+    "inscription_pro_titre" => "Situación laboral",
+    "inscription_profession_choisir" => "Situación laboral",
+    "inscription_profession_salarie" => "Asalariado",
+    "inscription_profession_fonctionnaire" => "Funcionario",
+    "inscription_profession_independant" => "Independiente",
+    "inscription_profession_commercant" => "Comerciante",
+    "inscription_profession_etudiant" => "Estudiante",
+    "inscription_profession_sans_emploi" => "Desempleado",
+    "inscription_profession_retraite" => "Jubilado",
+    "inscription_employeur" => "Nombre del empleador o de la empresa",
+    "inscription_revenu" => "Ingreso mensual",
+    "inscription_fiche_paie_label" => "Nómina del mes en curso (PDF, JPG, PNG)",
+    "inscription_identite_titre" => "Verificación de identidad",
+    "inscription_type_piece_choisir" => "Seleccione un documento de identidad",
+    "inscription_piece_cni" => "Documento de identidad",
+    "inscription_piece_passeport" => "Pasaporte",
+    "inscription_piece_permis" => "Carné de conducir",
+    "inscription_numero_piece" => "Número del documento de identidad",
+    "inscription_piece_label" => "Documento de identidad (PDF, JPG, PNG)",
+
     // Panel del cliente
     "dashboard_bienvenue" => "Bienvenido/a",
     "dashboard_sous_titre" => "Aquí tienes un resumen de tu cuenta SmartFinance.",
@@ -120,6 +149,14 @@ return [
     "admin_nouveau_mdp" => "Nueva contraseña",
     "admin_mdp_maj_succes" => "Contraseña actualizada con éxito.",
     "admin_mdp_trop_court" => "La contraseña debe tener al menos 6 caracteres.",
+    
+    //titre
+    "solutions_titre" => "Nuestras soluciones de financiación",
+"solutions_soustitre" => "Soluciones adaptadas a todas sus necesidades de financiación",
+
+"alt_cheque1" => "Cheque de financiación",
+"alt_cheque2" => "Desembolso del préstamo",
+"alt_conseiller" => "Asesor financiero en la oficina",
 
     // Testimonios (contenido)
     "temoignage1_texte" => "Obtuve la respuesta a mi solicitud en menos de 48 horas. Simple, rápido, y el seguimiento en línea es muy práctico.",
